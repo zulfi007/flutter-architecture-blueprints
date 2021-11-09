@@ -1,0 +1,36 @@
+import 'package:app/gen/assets.gen.dart';
+import 'package:app/ui/hook/use_asset_vide_player_controller.dart';
+import 'package:app/ui/hook/use_l10n.dart';
+import 'package:app/ui/theme/app_theme.dart';
+import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:video_player/video_player.dart';
+
+class VideoPage extends HookConsumerWidget {
+  const VideoPage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final theme = ref.watch(appThemeProvider);
+    final l10n = useL10n();
+    final videoController = useAssetVideoController(
+      asset: Assets.videos.bigbuckbunny,
+      autoPlay: true,
+      looping: true,
+    );
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          l10n.video,
+          style: theme.textTheme.h60.bold().rotunda(),
+        ),
+      ),
+      body: Center(
+        child: AspectRatio(
+          aspectRatio: 16 / 9,
+          child: VideoPlayer(videoController),
+        ),
+      ),
+    );
+  }
+}

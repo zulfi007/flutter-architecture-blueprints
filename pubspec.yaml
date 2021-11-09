@@ -1,0 +1,97 @@
+name: app
+description: Flutter Architecture Blueprints project.
+version: 1.0.0+1
+
+publish_to: 'none'
+
+environment:
+  sdk: '>=2.13.0 <3.0.0'
+  flutter: '>=2.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  # For Google and Firebase
+  firebase_core: ^1.8.0
+  firebase_auth: ^3.1.4
+  google_sign_in: ^5.2.0
+  firebase_crashlytics: ^2.2.4
+  firebase_performance: ^0.7.1+2
+
+  # For Architecture
+  flutter_hooks: ^0.18.0
+  hooks_riverpod: ^1.0.0-dev.10
+
+  # For Networking
+  dio: ^4.0.1
+  dio_firebase_performance: ^0.3.1-dev.3
+  retrofit: ^2.0.1
+  # For User-Agent Client Hints
+  ua_client_hints: ^1.1.0
+
+  # For Model
+  json_serializable: ^5.0.2
+  freezed_annotation: ^0.15.0
+
+  # For Navigation
+  auto_route: ^3.0.4
+
+  # For DateTime
+  intl: ^0.17.0
+
+  # Convert between Enum and String
+  enum_to_string: ^2.0.1
+
+  # For UIs
+  gap: ^2.0.0
+  cupertino_icons: ^1.0.3
+  google_fonts: ^2.1.0
+  flutter_svg: ^0.23.0+1
+  video_player: ^2.2.5
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  build_runner: ^2.0.4
+
+  # For Networking
+  retrofit_generator: ^2.0.0+1
+
+  # For Assets
+  flutter_gen_runner: ^4.0.1
+
+  # For Navigation
+  auto_route_generator: ^3.0.1
+
+  # For Model
+  freezed: ^0.14.2
+
+  # For Analyzer
+  flutter_lints: ^1.0.4
+
+  # For Testing
+  mocktail: ^0.2.0
+  mocktail_image_network: ^0.2.0
+
+flutter_gen:
+  integrations:
+    flutter_svg: true
+
+flutter:
+  uses-material-design: true
+  generate: true
+
+  assets:
+    - assets/images/
+    - assets/svgs/
+    - assets/videos/
+
+  fonts:
+    - family: Rotunda
+      fonts:
+        - asset: assets/fonts/Rotunda-Bold.otf
+          weight: 700
